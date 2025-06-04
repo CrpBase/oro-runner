@@ -4,11 +4,14 @@ const ctx = canvas.getContext("2d");
 let playerImg = new Image();
 playerImg.src = "oro_character.png";
 
-let backgroundImg = new Image();
-backgroundImg.src = "background.jpg";
-
 let groundImg = new Image();
 groundImg.src = "ground.png";
+
+let backgroundImg = new Image();
+backgroundImg.src = "background.jpg";
+backgroundImg.onload = () => {
+  console.log("Фон завантажено");
+};
 
 let player;
 let gravity = 1.1;
@@ -24,7 +27,6 @@ const minObstacleSpacing = 140;
 
 function resetGame() {
   player = { x: 60, y: 455, width: 80, height: 80, vy: 0, jumping: false };
-  gravity = 1.1;
   obstacles = [];
   frames = 0;
   score = 0;
@@ -41,7 +43,6 @@ document.addEventListener("keydown", (e) => {
     player.jumping = true;
   }
 });
-
 document.addEventListener("touchstart", () => {
   if (!player.jumping) {
     player.vy = -30;
@@ -69,10 +70,8 @@ function draw() {
     player.jumping = false;
   }
 
-  // Перешкоди з мінімальним інтервалом
   if (frames - lastObstacleFrame > minObstacleSpacing) {
-    const chance = Math.random();
-    if (chance > 0.4) {
+    if (Math.random() > 0.4) {
       const height = 40 + Math.floor(Math.random() * 30);
       obstacles.push({ x: canvas.width, y: 495 + (60 - height), width: 20, height: height });
       lastObstacleFrame = frames;
