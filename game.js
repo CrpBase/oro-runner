@@ -8,7 +8,7 @@ let groundImg = new Image();
 groundImg.src = "ground.png";
 
 let player;
-let gravity = 1.5;
+let gravity = 1.2;
 let obstacles = [];
 let frames = 0;
 let score = 0;
@@ -31,14 +31,14 @@ function resetGame() {
 
 document.addEventListener("keydown", (e) => {
   if (e.code === "Space" && !player.jumping) {
-    player.vy = -28;
+    player.vy = -30;
     player.jumping = true;
   }
 });
 
 document.addEventListener("touchstart", () => {
   if (!player.jumping) {
-    player.vy = -28;
+    player.vy = -30;
     player.jumping = true;
   }
 });
