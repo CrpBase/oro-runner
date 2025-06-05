@@ -75,7 +75,7 @@ if (frames % 140 === 0) {
         if (clusterChance < 0.3 && speed <= 6) {
             const count = 2;
             for (let j = 0; j < count; j++) {
-                const spacing = 220;
+                const spacing = 300;
                 obstacles.push({
                     x: canvas.width + j * spacing,
                     y: canvas.height - 64 - 100,
