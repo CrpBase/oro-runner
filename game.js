@@ -22,7 +22,7 @@ let player, obstacles, frames, score, gameOver, groundx, speed, difficultyCounte
 
 function resetGame() {
     player = { x: 60, y: 465, width: 120, height: 120, vy: 0, jumping: false };
-    gravity = 0.75;
+    gravity = 0.50;
     obstacles = [];
     frames = 0;
     score = 0;
@@ -34,14 +34,14 @@ function resetGame() {
 
 document.addEventListener("keydown", (e) => {
     if (e.code === "Space" && !player.jumping) {
-        player.vy = -20;
+        player.vy = -18;
         player.jumping = true;
     }
 });
 
 document.addEventListener("touchstart", () => {
     if (!player.jumping) {
-        player.vy = -20;
+        player.vy = -18;
         player.jumping = true;
     }
 });
