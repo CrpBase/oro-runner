@@ -22,7 +22,7 @@ let player, obstacles, frames, score, gameOver, groundx, speed, difficultyCounte
 
 function resetGame() {
     player = { x: 60, y: 465, width: 120, height: 120, vy: 0, jumping: false };
-    gravity = 1.0;
+    gravity = 0.5;
     obstacles = [];
     frames = 0;
     score = 0;
