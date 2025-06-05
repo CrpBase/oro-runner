@@ -38,14 +38,14 @@ function resetGame() {
 
 document.addEventListener("keydown", (e) => {
     if (e.code === "Space" && !player.jumping) {
-        player.vy = -18;
+        player.vy = -19;
         player.jumping = true;
     }
 });
 
 document.addEventListener("touchstart", () => {
     if (!player.jumping) {
-        player.vy = -18;
+        player.vy = -19;
         player.jumping = true;
     }
 });
@@ -81,7 +81,7 @@ function draw() {
         difficultyCounter++;
         if (difficultyCounter % 10 === 0) {
             speed += 1.0;
-            gravity += 1.0;
+            gravity += 0.05;
         }
     }
 
