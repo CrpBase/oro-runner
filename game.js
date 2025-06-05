@@ -34,14 +34,14 @@ function resetGame() {
 
 document.addEventListener("keydown", (e) => {
     if (e.code === "Space" && !player.jumping) {
-        player.vy = -23;
+        player.vy = -20;
         player.jumping = true;
     }
 });
 
 document.addEventListener("touchstart", () => {
     if (!player.jumping) {
-        player.vy = -23;
+        player.vy = -20;
         player.jumping = true;
     }
 });
