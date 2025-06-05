@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ORO Vault Runner</title>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      background: url('background.jpg') no-repeat center center fixed;
+      background-size: cover;
+      font-family: Arial, sans-serif;
+      color: white;
+      text-align: center;
+    }
+
+    #gameContainer {
+      position: absolute;
+      top: 100px;
+      left: 50%;
+      transform: translateX(-50%);
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      background-color: rgba(255, 255, 255, 0.03);
+    }
+
+    canvas {
+      display: block;
+    }
+
+    .menu {
+      margin-top: 50px;
+    }
+
+    .menu button {
+      background-color: orange;
+      border: none;
+      padding: 15px 30px;
+      margin: 10px;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 8px;
+    }
+
+    #scorePopup {
+      position: absolute;
+      top: 40%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: #2c2c2c;
+      color: white;
+      padding: 20px 30px;
+      border-radius: 10px;
+      display: none;
+      z-index: 10;
+    }
+
+    #scorePopup button {
+      margin-top: 15px;
+      background-color: orange;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 6px;
+    }
+  </style>
+</head>
+<body>
+  <h1>ORO Vault Runner</h1>
+  <div class="menu" id="mainMenu">
+    <button onclick="startGame()">Start</button>
+    <button onclick="alert('Shop coming soon')">Shop</button>
+    <button onclick="window.open('https://linktr.ee/oro_xyz')">Official Link</button>
+    <p id="totalScore">Total Points: 0</p>
+  </div>
+  <div id="scorePopup">
+    <div id="finalScore"></div>
+    <button onclick="closePopup()">OK</button>
+  </div>
+  <div id="gameContainer">
+    <canvas id="gameCanvas" width="1024" height="575"></canvas>
+  </div>
+  <script src="game.js"></script>
+</body>
+</html>
